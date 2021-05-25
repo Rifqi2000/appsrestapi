@@ -1,0 +1,24 @@
+{
+  "name": "appsrestapi",
+  "version": "1.0.0",
+  "description": "rest api application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rifqi2000/appsrestapi.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs"
+  ],
+  "author": "Rifqi MK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rifqi2000/appsrestapi/issues"
+  },
+  "homepage": "https://github.com/Rifqi2000/appsrestapi#readme"
+}
