@@ -1,3 +1,4 @@
+// to connect database
 var mysql = require('mysql');
 
 //buat koneksi database
