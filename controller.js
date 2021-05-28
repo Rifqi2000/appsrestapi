@@ -3,10 +3,11 @@
 var response = require('./res');
 var connection = require('./koneksi');
 const e = require('express');
+const conn = require('./koneksi');
 
 exports.index = function(req,res){
-    response.ok("REST API application is running",res)
-}
+    response.ok("REST API application is running",res);
+};
 
 // show data
 exports.showdata = function(req,res) {
@@ -14,7 +15,7 @@ exports.showdata = function(req,res) {
         if (error){
             connection.log(error);
         } else {
-            response.ok(rows,res)
+            response.ok(rows,res);
         }
     });
 };
@@ -26,7 +27,24 @@ exports.showdatafromId = function(req,res) {
         if (error){
             connection.log(error);
         } else {
-            response.ok(rows,res)
+            response.ok(rows,res);
         }
-    })
-}
+    });
+};
+
+// add data 
+exports.addData = function(req,res) {
+
+    //based on the column names in database
+    var nim = req.body.nim;
+    var nama =req.body.nama;
+    var jurusan = req.body.jurusan; 
+
+    connection.query('INSERT into mahasiswa (nim,nama,jurusan) VALUES (?,?,?)',[nim,nama,jurusan], function (error,rows,fields) {
+        if (error){
+            connection.log(error);
+        } else {
+            response.ok("Add data was successful",res);
+        } 
+    });
+};

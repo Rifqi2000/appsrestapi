@@ -10,4 +10,6 @@ module.exports = function(app){
         .get(myjson.showdata);
     app.route('/showdata/:id')
         .get(myjson.showdatafromId);
+    app.route('/adddata')
+        .post(myjson.addData);
 }
