@@ -10,7 +10,7 @@ exports.index = function(req,res){
 };
 
 // show data
-exports.showdata = function(req,res) {
+exports.showData = function(req,res) {
     connection.query('SELECT * FROM mahasiswa', function(error, rows, fields){
         if (error){
             connection.log(error);
@@ -21,7 +21,7 @@ exports.showdata = function(req,res) {
 };
 
 // show data from id
-exports.showdatafromId = function(req,res) {
+exports.showDatafromId = function(req,res) {
     let id = req.params.id;
     connection.query('SELECT * FROM mahasiswa WHERE id = ?', [id], function (error,rows, fields) {
         if (error){
@@ -65,3 +65,15 @@ exports.editData = function(req,res) {
         } 
     });
 };
+
+// delete data
+exports.deleteData = function(req,res){
+    var id = req.body.id;
+    connection.query('DELETE FROM mahasiswa WHERE id=?',[id], function (error,rows,fields){
+        if (error){
+            connection.log(error);
+        } else {
+            response.ok("Delete data was successful",res);
+        }
+    })
+}

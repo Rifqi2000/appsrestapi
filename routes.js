@@ -7,11 +7,13 @@ module.exports = function(app){
     app.route('/')
         .get(myjson.index);
     app.route('/showdata')
-        .get(myjson.showdata);
+        .get(myjson.showData);
     app.route('/showdata/:id')
-        .get(myjson.showdatafromId);
+        .get(myjson.showDatafromId);
     app.route('/adddata')
         .post(myjson.addData);
     app.route('/editdata')
         .put(myjson.editData);
+    app.route('/deletedata')
+        .delete(myjson.deleteData)
 }
