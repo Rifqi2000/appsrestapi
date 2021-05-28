@@ -8,4 +8,6 @@ module.exports = function(app){
         .get(myjson.index);
     app.route('/showdata')
         .get(myjson.showdata);
+    app.route('/showdata/:id')
+        .get(myjson.showdatafromId);
 }

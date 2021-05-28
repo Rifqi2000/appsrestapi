@@ -18,3 +18,15 @@ exports.showdata = function(req,res) {
         }
     });
 };
+
+// show data from id
+exports.showdatafromId = function(req,res) {
+    let id = req.params.id;
+    connection.query('SELECT * FROM mahasiswa WHERE id = ?', [id], function (error,rows, fields) {
+        if (error){
+            connection.log(error);
+        } else {
+            response.ok(rows,res)
+        }
+    })
+}
