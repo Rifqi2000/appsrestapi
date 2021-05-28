@@ -6,4 +6,6 @@ module.exports = function(app){
 
     app.route('/')
         .get(myjson.index);
+    app.route('/showdata')
+        .get(myjson.showdata);
 }
