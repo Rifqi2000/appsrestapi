@@ -16,4 +16,6 @@ module.exports = function(app){
         .put(myjson.editData);
     app.route('/deletedata')
         .delete(myjson.deleteData)
+    app.route('/showgroup')
+        .get(myjson.showGroup);
 }

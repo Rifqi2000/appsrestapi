@@ -75,5 +75,16 @@ exports.deleteData = function(req,res){
         } else {
             response.ok("Delete data was successful",res);
         }
+    });
+};
+
+// show group
+exports.showGroup = function(req,res){
+    connection.query('SELECT mahasiswa.id, mahasiswa.nim, mahasiswa.nama, mahasiswa.jurusan, matakuliah.matakuliah, matakuliah.sks from krs JOIN matakuliah JOIN mahasiswa WHERE krs.id_matakuliah = matakuliah.id_matakuliah AND krs.id = mahasiswa.id ORDER BY mahasiswa.id', function(error, rows, fields){
+        if (error){
+            console.log(error);
+        } else{
+            response.oknested(rows,res);
+        }
     })
 }
