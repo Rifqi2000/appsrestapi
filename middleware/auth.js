@@ -21,7 +21,7 @@ exports.register = function(req,res){
 
     query = mysql.format(query,table);
 
-    connection.query(query,function(error,rows){
+    connection.query(query, function(error,rows){
         if (error){
             console.log(error);
         } else{
