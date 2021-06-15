@@ -93,3 +93,7 @@ exports.login = function(req,res){
         }
     });
 }
+
+exports.secretpage = function(req,res){
+    response.ok("This Page is only for users with role = 2",res);
+}
